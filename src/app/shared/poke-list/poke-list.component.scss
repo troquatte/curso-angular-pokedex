@@ -1,76 +1,87 @@
 @import '../../../config-scss/rem-calc.scss';
 
 $padding: rem-calc(20);
+
 :host {
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
+	width: 100%;
 
-	padding: $padding 0;
-
-	.pokemon {
-		position: relative;
+	.listagem {
 		display: flex;
-		background: var(--branco);
+		justify-content: space-between;
+		flex-wrap: wrap;
 
-		width: calc(49% - 2.5rem);
-		height: rem-calc(157 - 40);
+		padding: $padding 0;
 
-		margin-bottom: rem-calc(10);
-		padding: $padding;
+		.pokemon {
+			position: relative;
+			display: flex;
+			background: var(--branco);
 
-		border-radius: rem-calc(10);
+			width: calc(49% - 2.5rem);
+			height: rem-calc(157 - 40);
 
-		text-decoration: none;
-		color: var(--primary-color);
+			margin-bottom: rem-calc(10);
+			padding: $padding;
 
-		&__status {
-			h2 {
-				font-size: rem-calc(22);
-				font-style: italic;
-				font-weight: 700;
-				text-transform: capitalize;
+			border-radius: rem-calc(10);
 
-				margin-bottom: rem-calc(10);
+			text-decoration: none;
+			color: var(--primary-color);
+
+			&__status {
+				h2 {
+					font-size: rem-calc(22);
+					font-style: italic;
+					font-weight: 700;
+					text-transform: capitalize;
+
+					margin-bottom: rem-calc(10);
+				}
+
+				ul {
+					display: flex;
+					flex-direction: column;
+
+					li {
+						background: var(--cinza);
+						font-size: rem-calc(10);
+
+						display: flex;
+						justify-content: center;
+						align-items: center;
+
+						border-radius: rem-calc(50);
+
+						width: rem-calc(60);
+						margin-bottom: rem-calc(5);
+					}
+				}
 			}
 
-			ul {
+			&__image {
+				position: absolute;
+
 				display: flex;
-				flex-direction: column;
+				align-items: center;
+				justify-content: center;
 
-				li {
-					background: var(--cinza);
-					font-size: rem-calc(10);
+				height: rem-calc(90);
+				width: rem-calc(110);
 
-					display: flex;
-					justify-content: center;
-					align-items: center;
+				right: $padding;
+				bottom: $padding;
 
-					border-radius: rem-calc(50);
+				background: url('../../../assets/bg/background-list-pokemons.svg') no-repeat;
 
+				img {
 					width: rem-calc(60);
-					margin-bottom: rem-calc(5);
 				}
 			}
 		}
 
-		&__image {
-			position: absolute;
-
-			display: flex;
-			align-items: center;
-			justify-content: center;
-
-			height: rem-calc(90);
-			width: rem-calc(110);
-
-			right: $padding;
-			bottom: $padding;
-
-			background: url('../../../assets/bg/background-list-pokemons.svg') no-repeat;
-
-			img {
-				width: rem-calc(60);
+		@media (max-width: 400px) {
+			a {
+				width: 100% !important;
 			}
 		}
 	}
