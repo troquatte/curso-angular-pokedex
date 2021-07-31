@@ -27,6 +27,13 @@
 				font-size: rem-calc(60);
 				color: rgba(255, 255, 255, 0.1);
 			}
+
+			h1,
+			h2 {
+				//Remove Bug Animation
+				-webkit-animation-fill-mode: none !important;
+				animation-fill-mode: none !important;
+			}
 		}
 
 		.pokemon__status {
@@ -38,6 +45,10 @@
 				left: rem-calc(30);
 				max-width: rem-calc(130);
 				z-index: 10;
+
+				//Remove Bug Animation
+				-webkit-animation-fill-mode: none !important;
+				animation-fill-mode: none !important;
 			}
 
 			&__statistics {
@@ -74,7 +85,7 @@
 			}
 		}
 
-		@media (max-width: 320px) {
+		@media (max-width: 420px) {
 			margin-top: rem-calc(10);
 
 			.pokemon__names {
